@@ -14,7 +14,7 @@ pipeline {
                 // Clone o repositório do backend
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Fransualdo-Lopes/osworks-api.git']]])
                 // Execute o comando Maven inserindo o caminho do pom.xml para construir o backend 
-                sh 'chmod -R 777 osworks-api
+                sh 'chmod -R 777 osworks-api'
                 sh 'mvn -f osworks-api/osworks/pom.xml clean package'
             }
             post {
